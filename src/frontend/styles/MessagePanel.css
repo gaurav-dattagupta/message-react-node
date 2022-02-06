@@ -1,0 +1,97 @@
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  align-items: stretch;
+}
+.messages {
+  display: grid;
+  height: auto;
+  max-height: 80%;
+  overflow-x: auto;
+  overflow-y: auto;
+  width: 100%;
+  align-items: stretch;
+  margin-top: 2rem;
+}
+.notification {
+  font-size: calc(16px + 2vh);
+}
+
+.message {
+  margin-bottom: 1rem;
+  align-items: flex-start;
+  max-width: 90%;
+  width: auto;
+  height: auto;
+  padding: 0.5em;
+  background-color: #444;
+}
+
+.message-top {
+  display: flex;
+  width: 100%;
+  border-bottom: solid 1px grey;
+}
+.message-body {
+  font-size: 1.5rem;
+  color: white;
+  white-space: pre-line;
+  word-wrap: break-word;
+}
+
+.message-footer {
+  height: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: lightcyan;
+}
+
+.add-message {
+  width: 100%;
+  flex: 1;
+  border-top: solid 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 3;
+  height: 6rem;
+  resize: none;
+}
+
+textarea {
+  flex: 1;
+  resize: none;
+  font-size: 1.7em;
+}
+
+.characters-remaining {
+  width: auto;
+  max-height: 20%;
+  height: auto;
+  text-align: right;
+  margin: 0 10px 0 0;
+}
+
+button {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  height: 6rem;
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}

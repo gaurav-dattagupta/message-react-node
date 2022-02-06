@@ -1,0 +1,27 @@
+.channels-nav-container {
+  display: grid;
+  height: auto;
+  width: 100%;
+  align-items: stretch;
+  margin-top: 2rem;
+}
+
+.message-channel {
+  font-size: calc(16px + 2vmin);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  background-color: #666;
+}
+
+.message-channel.selected {
+  cursor: normal;
+  color: black;
+  background-color: azure;
+}
+
+.message-channel:last-child {
+  margin-bottom: 0;
+}

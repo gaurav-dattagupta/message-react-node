@@ -1,0 +1,60 @@
+{
+  "name": "message-board-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "concurrently": "^6.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.1.2"
+  },
+  "scripts": {
+    "start-local": "cd ./src/backend && yarn typescript && cd ../frontend && yarn typescript && cd ../../ && yarn start-servers",
+    "start-servers": "concurrently –kill-others-on-fail \"cd ./src/backend && npm run server\" \"yarn start\" ",
+    "lint": "./node_modules/.bin/eslint --config .eslintrc.js --parser-options=noWatch:true 'src/**/*.{js,ts,tsx}' && yarn lint-unused-exports",
+    "lint-unused-exports": "ts-prune",
+    "pretty": "git fetch && yarn pretty:frontend ; yarn pretty:backend",
+    "pretty:frontend": "cd ./src/frontend && yarn pretty:check || yarn pretty:write",
+    "pretty:backend": "cd ./src/backend && yarn pretty:check || yarn pretty:write",
+    "start": "react-scripts start"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "@typescript-eslint/parser": "^5.2.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.1",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "prettier": "^2.4.1",
+    "pretty-quick": "^3.1.1",
+    "ts-prune": "^0.10.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:3002/"
+}
